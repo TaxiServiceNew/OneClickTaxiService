@@ -43,6 +43,10 @@
         <activity
             android:name=".MyDetail"
             android:label="@string/title_activity_my_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HireDetail"
+            android:label="@string/title_activity_hire_detail"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
