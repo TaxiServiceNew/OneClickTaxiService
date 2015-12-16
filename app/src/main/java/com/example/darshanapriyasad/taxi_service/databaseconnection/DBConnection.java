@@ -139,11 +139,12 @@ public class DBConnection {
     public JSONObject setDbSignUp(String firstName, String lastName, String NIC, String password, String address, String telHome, String telMobile, String userName){
         String url="http://dbprojectg5.net16.net/userlogin.php?firstName="+firstName+"&lastName="+lastName+"&NIC="+NIC+"&password="+password+"&address="+address+"&telHome="+telHome+"&telMobile="+telMobile+"&userName="+userName+"&functionname=dbsignup";
 
-        System.out.println("888");
+        System.out.println("888 " + url);
         HttpEntity httpEntity= null;
 
         DefaultHttpClient httpClient = new DefaultHttpClient();
         HttpGet httpGet = new HttpGet(url);
+        System.out.println("7777777777   " + httpGet.toString());
         try {
             HttpResponse httpResponse = httpClient.execute(httpGet);
             httpEntity=httpResponse.getEntity();
@@ -159,8 +160,11 @@ public class DBConnection {
             String entityResponse;
             try {
                 entityResponse = EntityUtils.toString(httpEntity);
-                System.out.println("qqqqqqqqqqqqqqqqqq" + entityResponse);
-                jsonObject = new JSONObject(entityResponse);
+                System.out.println("qqqqqqqqqqqqqqqqqq = " + entityResponse);
+                String varr = "true";
+                String jStr = "{\"bool\":\"" +entityResponse+ "\"}";
+                jsonObject = new JSONObject(jStr);
+                System.out.println("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL    " + jsonObject.getString("bool"));
             } catch (ParseException e) {
                 e.printStackTrace();
             } catch (IOException e) {
