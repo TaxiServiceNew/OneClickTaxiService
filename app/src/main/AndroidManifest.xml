@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.darshanapriyasad.taxi_service">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".contextconnection.ContextConnection"
         android:allowBackup="true"
@@ -19,9 +21,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <uses-permission android:name="android.permission.INTERNET" />
+
         <activity
             android:name=".MainWindow"
             android:label="@string/title_activity_main_window"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DriverDetail"
+            android:label="@string/title_activity_driver_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HireTaxi"
+            android:label="@string/title_activity_hire_taxi"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
