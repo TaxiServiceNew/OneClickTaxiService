@@ -1,6 +1,7 @@
 package com.example.darshanapriyasad.taxi_service;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,8 +10,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.darshanapriyasad.taxi_service.databaseconnection.DBConnection;
 import com.example.darshanapriyasad.taxi_service.model.User;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class SignUp extends AppCompatActivity {
 
@@ -61,6 +67,38 @@ public class SignUp extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private class DbSignUp extends AsyncTask<DBConnection,Long,JSONObject> {
+
+        @Override
+        protected JSONObject doInBackground(DBConnection... params) {
+            return params[0].setDbSignUp(firstName,lastName,NIC,password,address,telHome,telMobile,userName);
+        }
+
+        @Override
+        protected void onPostExecute(JSONObject result) {
+            if(result!=null) {
+                String user_id = null;
+                try {
+                    user_id= result.getString("C_NIC");
+                    System.out.println(user_id);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                Toast t = Toast.makeText(getApplicationContext(), "Successfully SignUp", Toast.LENGTH_SHORT);
+                t.show();
+                Intent intent = new Intent(SignUp.this, MainWindow.class);
+                intent.putExtra("C_NIC",user_id);
+                startActivity(intent);
+
+
+            }else{
+
+                Toast t = Toast.makeText(getApplicationContext(), "SignUp Failed", Toast.LENGTH_LONG);
+                t.show();
+            }
+        }
     }
 
 }
