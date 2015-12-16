@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView nameText;
     private TextView passwordText;
 
-    String un;
-    String pw;
+    private String un;
+    private String pw;
 
 
     @Override
@@ -48,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
             {
                 un= nameText.getText().toString();
                 pw = passwordText.getText().toString();
-
-                //getData from database
                 new GetUserData().execute(new DBConnection());
             }
         });
@@ -96,16 +94,18 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(JSONObject result) {
             if(result!=null) {
-
+                String user_id = null;
                 try {
-                    String user_id = result.getString("C_NIC");
+                     user_id= result.getString("C_NIC");
                     System.out.println(user_id);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                Toast t = Toast.makeText(getApplicationContext(), "Successfully Logged", Toast.LENGTH_LONG);
+                Toast t = Toast.makeText(getApplicationContext(), "Successfully Logged", Toast.LENGTH_SHORT);
                 t.show();
-
+                Intent intent = new Intent(MainActivity.this, MainWindow.class);
+                intent.putExtra("C_NIC",user_id);
+                startActivity(intent);
 
 
             }else{
