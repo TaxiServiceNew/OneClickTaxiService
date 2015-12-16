@@ -16,12 +16,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Service ID"
         android:ems="10"
         android:id="@+id/idText"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:hint="Service ID" />
 
     <Button
         android:layout_width="wrap_content"
@@ -46,12 +46,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
         android:ems="10"
         android:id="@+id/editText"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:hint="Name" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -62,7 +62,7 @@
         android:layout_below="@+id/editText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="Telephone" />
+        android:hint="Telephone" />
 
     <RatingBar
         android:layout_width="wrap_content"
@@ -83,5 +83,5 @@
         android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/imageView1"
         android:layout_toStartOf="@+id/imageView1"
-        android:text="serviceTime" />
+        android:hint="serviceTime" />
 </RelativeLayout>

@@ -17,22 +17,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="FROM"
         android:ems="10"
         android:id="@+id/fromText"
         android:layout_below="@+id/priceText"
         android:layout_alignLeft="@+id/toText"
-        android:layout_alignStart="@+id/toText" />
+        android:layout_alignStart="@+id/toText"
+        android:hint="FROM" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="TO"
         android:ems="10"
         android:id="@+id/toText"
         android:layout_below="@+id/fromText"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:hint="TO" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -40,10 +40,10 @@
         android:inputType="date"
         android:ems="10"
         android:id="@+id/fromDate"
-        android:text="FROM DATE"
         android:layout_below="@+id/timeText"
         android:layout_alignLeft="@+id/toDate"
-        android:layout_alignStart="@+id/toDate" />
+        android:layout_alignStart="@+id/toDate"
+        android:hint="FROM DATE" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -51,10 +51,10 @@
         android:inputType="date"
         android:ems="10"
         android:id="@+id/toDate"
-        android:text="TO DATE"
         android:layout_below="@+id/fromDate"
         android:layout_alignLeft="@+id/priceText"
-        android:layout_alignStart="@+id/priceText" />
+        android:layout_alignStart="@+id/priceText"
+        android:hint="TO DATE" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -62,8 +62,8 @@
         android:id="@+id/imageView3"
         android:src="@mipmap/ic_hire"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/textView2"
-        android:layout_toStartOf="@+id/textView2" />
+        android:layout_toStartOf="@+id/textView2"
+        android:layout_toLeftOf="@+id/textView2" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -71,11 +71,11 @@
         android:inputType="time"
         android:ems="10"
         android:id="@+id/timeText"
-        android:text="TIME"
         android:layout_marginTop="15dp"
         android:layout_below="@+id/imageView3"
         android:layout_alignLeft="@+id/fromDate"
-        android:layout_alignStart="@+id/fromDate" />
+        android:layout_alignStart="@+id/fromDate"
+        android:hint="Time" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -83,10 +83,10 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/priceText"
-        android:text="MAXIMUM PRICE"
         android:layout_below="@+id/toDate"
         android:layout_alignLeft="@+id/fromText"
-        android:layout_alignStart="@+id/fromText" />
+        android:layout_alignStart="@+id/fromText"
+        android:hint="MAXIMUM PRICE" />
 
     <Spinner
         android:layout_width="wrap_content"
