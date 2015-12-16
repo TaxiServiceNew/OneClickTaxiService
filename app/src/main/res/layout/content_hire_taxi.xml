@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.darshanapriyasad.taxi_service.HireTaxi"
+    tools:showIn="@layout/activity_hire_taxi"
+    >
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="FROM"
+        android:ems="10"
+        android:id="@+id/fromText"
+        android:layout_below="@+id/priceText"
+        android:layout_alignLeft="@+id/toText"
+        android:layout_alignStart="@+id/toText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="TO"
+        android:ems="10"
+        android:id="@+id/toText"
+        android:layout_below="@+id/fromText"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/fromDate"
+        android:text="FROM DATE"
+        android:layout_below="@+id/timeText"
+        android:layout_alignLeft="@+id/toDate"
+        android:layout_alignStart="@+id/toDate" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/toDate"
+        android:text="TO DATE"
+        android:layout_below="@+id/fromDate"
+        android:layout_alignLeft="@+id/priceText"
+        android:layout_alignStart="@+id/priceText" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:src="@mipmap/ic_hire"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/textView2"
+        android:layout_toStartOf="@+id/textView2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/timeText"
+        android:text="TIME"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignLeft="@+id/fromDate"
+        android:layout_alignStart="@+id/fromDate" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/priceText"
+        android:text="MAXIMUM PRICE"
+        android:layout_below="@+id/toDate"
+        android:layout_alignLeft="@+id/fromText"
+        android:layout_alignStart="@+id/fromText" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:spinnerMode="dialog"
+        android:layout_below="@+id/toText"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_alignLeft="@+id/toText"
+        android:layout_alignStart="@+id/toText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="HireTaxi"
+        android:id="@+id/textView2"
+        android:textColor="#4846ce"
+        android:textSize="48dp"
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_alignRight="@+id/timeText"
+        android:layout_alignEnd="@+id/timeText" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hire"
+        android:id="@+id/hireButton"
+        android:layout_below="@+id/spinner"
+        android:layout_alignLeft="@+id/toText"
+        android:layout_alignStart="@+id/toText" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/backButton"
+        android:layout_below="@+id/spinner"
+        android:layout_alignRight="@+id/spinner"
+        android:layout_alignEnd="@+id/spinner" />
+
+</RelativeLayout>
