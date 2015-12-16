@@ -134,4 +134,44 @@ public class DBConnection {
         return null;
 
     }*/
+
+
+    public JSONObject setDbSignUp(String firstName, String lastName, String NIC, String password, String address, String telHome, String telMobile, String userName){
+        String url="http://dbprojectg5.net16.net/userlogin.php?firstName="+firstName+"&lastName="+lastName+"&NIC="+NIC+"&password="+password+"&address="+address+"&telHome="+telHome+"&telMobile="+telMobile+"&userName="+userName+"&functionname=dbsignup";
+
+        HttpEntity httpEntity= null;
+
+        DefaultHttpClient httpClient = new DefaultHttpClient();
+        HttpGet httpGet = new HttpGet(url);
+        try {
+            HttpResponse httpResponse = httpClient.execute(httpGet);
+            httpEntity=httpResponse.getEntity();
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        JSONObject jsonObject = null;
+
+        if(httpEntity!=null){
+
+            String entityResponse;
+            try {
+                entityResponse = EntityUtils.toString(httpEntity);
+                System.out.println("qqqqqqqqqqqqqqqqqq" + entityResponse);
+                jsonObject = new JSONObject(entityResponse);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return jsonObject;
+
+    }
+
+
 }
