@@ -29,8 +29,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Taxi Search"
-        android:id="@+id/taxiButton"
+        android:text="My Detail"
+        android:id="@+id/detailButton"
         android:layout_below="@+id/packageButton"
         android:layout_alignLeft="@+id/imageView2"
         android:layout_alignStart="@+id/imageView2"
@@ -43,7 +43,7 @@
         android:text="Taxi and Tour"
         android:id="@+id/driverButton"
         android:textStyle="bold"
-        android:layout_alignTop="@+id/taxiButton"
+        android:layout_alignTop="@+id/detailButton"
         android:layout_alignRight="@+id/historyButton"
         android:layout_alignEnd="@+id/historyButton" />
 

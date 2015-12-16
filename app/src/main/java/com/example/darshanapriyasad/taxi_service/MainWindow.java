@@ -27,6 +27,14 @@ public class MainWindow extends AppCompatActivity {
             }
         });
 
+        Button detailButton = (Button) findViewById(R.id.detailButton);
+
+        detailButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainWindow.this, MyDetail.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }
