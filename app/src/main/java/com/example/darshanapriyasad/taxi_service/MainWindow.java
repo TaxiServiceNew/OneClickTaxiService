@@ -22,7 +22,7 @@ public class MainWindow extends AppCompatActivity {
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainWindow.this,HireTaxi.class);
+                Intent intent = new Intent(MainWindow.this, HireTaxi.class);
                 startActivity(intent);
             }
         });
@@ -32,6 +32,15 @@ public class MainWindow extends AppCompatActivity {
         detailButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(MainWindow.this, MyDetail.class);
+                startActivity(intent);
+            }
+        });
+
+        Button historyButton = (Button) findViewById(R.id.historyButton);
+
+        historyButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainWindow.this, HireDetail.class);
                 startActivity(intent);
             }
         });

@@ -1,6 +1,7 @@
 package com.example.darshanapriyasad.taxi_service;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -9,13 +10,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.darshanapriyasad.taxi_service.R;
+import com.example.darshanapriyasad.taxi_service.databaseconnection.DBConnection;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView nameText;
     private TextView passwordText;
+
+    String un;
+    String pw;
 
 
     @Override
@@ -37,8 +46,11 @@ public class MainActivity extends AppCompatActivity {
         {
             public void onClick(View v)
             {
-                Intent intent = new Intent(MainActivity.this,MainWindow.class);
-                startActivity(intent);
+                un= nameText.getText().toString();
+                pw = passwordText.getText().toString();
+
+                //getData from database
+                new GetUserData().execute(new DBConnection());
             }
         });
 
@@ -73,4 +85,36 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    private class GetUserData extends AsyncTask<DBConnection,Long,JSONObject> {
+
+        @Override
+        protected JSONObject doInBackground(DBConnection... params) {
+            return params[0].getUserDetail(un, pw);
+        }
+
+        @Override
+        protected void onPostExecute(JSONObject result) {
+            if(result!=null) {
+
+                try {
+                    String user_id = result.getString("C_NIC");
+                    System.out.println(user_id);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                Toast t = Toast.makeText(getApplicationContext(), "Successfully Logged", Toast.LENGTH_LONG);
+                t.show();
+
+
+
+            }else{
+
+                Toast t = Toast.makeText(getApplicationContext(), "Logging Failed", Toast.LENGTH_LONG);
+                t.show();
+            }
+        }
+    }
+
+
 }
