@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.darshanapriyasad.taxi_service.model.User;
 
@@ -45,7 +46,30 @@ public class SignUp extends AppCompatActivity {
                 telHome = ((TextView) findViewById(R.id.homeText)).getText().toString();
                 telMobile = ((TextView) findViewById(R.id.mobileText)).getText().toString();
                 userName = ((TextView) findViewById(R.id.userNameText)).getText().toString();
+                if(telHome != null || telMobile!= null){
 
+                    if(telHome == null){
+                        telHome = "no";
+                    }else if(telMobile == null){
+                        telMobile = "no";
+                    }
+
+                    if(password == rePassword && userName != null){
+                        if(NIC != null && address != null && firstName != null && lastName != null){
+                            // code here
+                        }else{
+                            Toast t = Toast.makeText(getApplicationContext(), "Please fill every field", Toast.LENGTH_SHORT);
+                            t.show();
+                        }
+                    }else{
+                        Toast t = Toast.makeText(getApplicationContext(), "Logging Failed", Toast.LENGTH_SHORT);
+                        t.show();
+                    }
+
+                }else{
+                    Toast t = Toast.makeText(getApplicationContext(), "Please enter at least one contact number", Toast.LENGTH_SHORT);
+                    t.show();
+                }
                 User user = new User(firstName,lastName,NIC,address,telHome,telMobile,userName,password,rePassword);
 
                 /*
