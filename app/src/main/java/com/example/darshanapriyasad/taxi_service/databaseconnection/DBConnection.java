@@ -161,11 +161,10 @@ public class DBConnection {
             try {
                 entityResponse = EntityUtils.toString(httpEntity);
                 System.out.println("qqqqqqqqqqqqqqqqqq = " + entityResponse);
-                //String varr = "true";
-                //String jStr = "{\"bool\":\"" +entityResponse+ "}";
-                jsonObject = new JSONObject();
-                jsonObject.put("success",entityResponse);
-                //System.out.println("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL    " + jsonObject.getString("bool"));
+                String varr = "true";
+                String jStr = "{\"bool\":\"" +entityResponse+ "\"}";
+                jsonObject = new JSONObject(jStr);
+                System.out.println("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL    " + jsonObject.getString("bool"));
             } catch (ParseException e) {
                 e.printStackTrace();
             } catch (IOException e) {
