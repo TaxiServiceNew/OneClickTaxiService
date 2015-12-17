@@ -102,8 +102,9 @@ public class SignUp extends AppCompatActivity {
                 }
                 */
                 try {
+
                     boolean output = result.getString("success").equals("true");
-                    System.out.println("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP " + output);
+                    System.out.println("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP " + result.getString("success"));
                     if(output){
                         Toast t = Toast.makeText(getApplicationContext(), "Successfully SignUp", Toast.LENGTH_SHORT);
                         t.show();
