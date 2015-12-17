@@ -51,6 +51,15 @@ public class MainWindow extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button driverButton = (Button) findViewById(R.id.driverDButton);
+
+        driverButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainWindow.this, DriverDetail.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }

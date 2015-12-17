@@ -21,7 +21,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:hint="Service ID" />
+        android:hint="Driver NIC" />
 
     <Button
         android:layout_width="wrap_content"
@@ -47,28 +47,20 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/firstNameText"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:hint="Name" />
+        android:hint="First Name" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="Telephone" />
-
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ratingBar"
-        android:layout_below="@+id/serviceText"
+        android:id="@+id/telephoneText"
+        android:hint="Telephone"
+        android:layout_below="@+id/lastNameText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -77,11 +69,30 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/serviceText"
-        android:layout_below="@+id/editText2"
+        android:id="@+id/addressText"
+        android:hint="Address"
+        android:layout_below="@+id/telephoneText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/lastNameText"
+        android:layout_below="@+id/firstNameText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/imageView1"
-        android:layout_toStartOf="@+id/imageView1"
-        android:hint="serviceTime" />
+        android:hint="Last Name" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/backButton"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/addressText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
