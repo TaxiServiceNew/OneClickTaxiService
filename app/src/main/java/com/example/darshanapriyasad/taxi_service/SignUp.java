@@ -3,8 +3,6 @@ package com.example.darshanapriyasad.taxi_service;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -13,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.darshanapriyasad.taxi_service.databaseconnection.DBConnection;
-import com.example.darshanapriyasad.taxi_service.model.User;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -52,17 +49,35 @@ public class SignUp extends AppCompatActivity {
                 telMobile = ((TextView) findViewById(R.id.mobileText)).getText().toString();
                 userName = ((TextView) findViewById(R.id.userNameText)).getText().toString();
 
-                User user = new User(firstName,lastName,NIC,address,telHome,telMobile,userName,password,rePassword);
+                if(telHome != null || telMobile!= null){
 
-                /*
+                    if(telHome == null){
+                        telHome = "no";
+                    }else if(telMobile == null){
+                        telMobile = "no";
+                    }
 
-                    Should insert into both the customer-telephone, customer ad customer-login
+                    if(password.equals(rePassword) && userName != null){
+                        if(NIC != null && address != null && firstName != null && lastName != null){
+                            // code here
+                            new DbSignUp().execute(new DBConnection());
+
+                        }else{
+                            Toast t = Toast.makeText(getApplicationContext(), "Please fill every field", Toast.LENGTH_SHORT);
+                            t.show();
+                        }
+                    }else{
+                        Toast t = Toast.makeText(getApplicationContext(), "Logging Failed", Toast.LENGTH_SHORT);
+                        t.show();
+                    }
+
+                }else{
+                    Toast t = Toast.makeText(getApplicationContext(), "Please enter at least one contact number", Toast.LENGTH_SHORT);
+                    t.show();
+                }
 
 
-                 */
 
-                System.out.println("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
-                new DbSignUp().execute(new DBConnection());
             }
         });
     }
@@ -77,6 +92,7 @@ public class SignUp extends AppCompatActivity {
         @Override
         protected void onPostExecute(JSONObject result) {
             if(result!=null) {
+                /*
                 String user_id = null;
                 try {
                     user_id= result.getString("C_NIC");
@@ -84,16 +100,30 @@ public class SignUp extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                Toast t = Toast.makeText(getApplicationContext(), "Successfully SignUp", Toast.LENGTH_SHORT);
-                t.show();
-                Intent intent = new Intent(SignUp.this, MainWindow.class);
-                intent.putExtra("C_NIC",user_id);
-                startActivity(intent);
+                */
+                try {
+                    boolean output = result.getString("success").equals("true");
+                    System.out.println("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP " + output);
+                    if(output){
+                        Toast t = Toast.makeText(getApplicationContext(), "Successfully SignUp", Toast.LENGTH_SHORT);
+                        t.show();
+                        Intent intent = new Intent(SignUp.this, MainWindow.class);
+                        intent.putExtra("C_NIC",NIC);
+                        startActivity(intent);
+
+                    }else{
+                        Toast t = Toast.makeText(getApplicationContext(), "SignUp Failed", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
 
             }else{
 
-                Toast t = Toast.makeText(getApplicationContext(), "SignUp Failed", Toast.LENGTH_LONG);
+                Toast t = Toast.makeText(getApplicationContext(), "SignUp Failed Object", Toast.LENGTH_LONG);
                 t.show();
             }
         }
