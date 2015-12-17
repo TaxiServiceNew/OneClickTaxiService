@@ -51,20 +51,35 @@ public class SignUp extends AppCompatActivity {
                 telHome = ((TextView) findViewById(R.id.homeText)).getText().toString();
                 telMobile = ((TextView) findViewById(R.id.mobileText)).getText().toString();
                 userName = ((TextView) findViewById(R.id.userNameText)).getText().toString();
+                if(telHome != null || telMobile!= null){
 
-                User user = new User(firstName,lastName,NIC,address,telHome,telMobile,userName,password,rePassword);
+                    if(telHome == null){
+                        telHome = "no";
+                    }else if(telMobile == null){
+                        telMobile = "no";
+                    }
 
-                /*
+                    if(password.equals(rePassword) && userName != null){
+                        if(NIC != null && address != null && firstName != null && lastName != null){
+                            // code here
+                            new DbSignUp().execute(new DBConnection());
 
-                    Should insert into both the customer-telephone, customer ad customer-login
+                        }else{
+                            Toast t = Toast.makeText(getApplicationContext(), "Please fill every field", Toast.LENGTH_SHORT);
+                            t.show();
+                        }
+                    }else{
+                        Toast t = Toast.makeText(getApplicationContext(), "Logging Failed", Toast.LENGTH_SHORT);
+                        t.show();
+                    }
+
+                }else{
+                    Toast t = Toast.makeText(getApplicationContext(), "Please enter at least one contact number", Toast.LENGTH_SHORT);
+                    t.show();
+                }
 
 
-                 */
 
-
-
-                Intent intent = new Intent(SignUp.this, HireTaxi.class);
-                startActivity(intent);
             }
         });
     }
@@ -79,6 +94,7 @@ public class SignUp extends AppCompatActivity {
         @Override
         protected void onPostExecute(JSONObject result) {
             if(result!=null) {
+                /*
                 String user_id = null;
                 try {
                     user_id= result.getString("C_NIC");
@@ -86,10 +102,12 @@ public class SignUp extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                */
+
                 Toast t = Toast.makeText(getApplicationContext(), "Successfully SignUp", Toast.LENGTH_SHORT);
                 t.show();
                 Intent intent = new Intent(SignUp.this, MainWindow.class);
-                intent.putExtra("C_NIC",user_id);
+                intent.putExtra("C_NIC",NIC);
                 startActivity(intent);
 
 
