@@ -61,9 +61,37 @@ public class SignUp extends AppCompatActivity {
 
                  */
 
-                System.out.println("WWWWWWWWWWWWWWWWWWsdsdsdsdsdWWWWWWWWWWWWWWWWWWWWWWW");
+                System.out.println("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
 
-                new DbSignUp().execute(new DBConnection());
+                if(telHome != null || telMobile!= null){
+
+                    if(telHome == null){
+                        telHome = "no";
+                    }else if(telMobile == null){
+                        telMobile = "no";
+                    }
+
+                    if(password.equals(rePassword) && userName != null){
+                        if(NIC != null && address != null && firstName != null && lastName != null){
+                            // code here
+                            new DbSignUp().execute(new DBConnection());
+
+                        }else{
+                            Toast t = Toast.makeText(getApplicationContext(), "Please fill every field", Toast.LENGTH_SHORT);
+                            t.show();
+                        }
+                    }else{
+                        Toast t = Toast.makeText(getApplicationContext(), "Logging Failed", Toast.LENGTH_SHORT);
+                        t.show();
+                    }
+
+                }else{
+                    Toast t = Toast.makeText(getApplicationContext(), "Please enter at least one contact number", Toast.LENGTH_SHORT);
+                    t.show();
+                }
+
+
+
             }
         });
     }
@@ -80,8 +108,8 @@ public class SignUp extends AppCompatActivity {
             if(result!=null) {
                 String user_id = null;
                 try {
-                    user_id= result.getString("C_NIC");
-                    System.out.println(user_id);
+                    user_id= result.getString("bool");
+                    System.out.println("boooooooooooooooooooooooooool =" + user_id);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
