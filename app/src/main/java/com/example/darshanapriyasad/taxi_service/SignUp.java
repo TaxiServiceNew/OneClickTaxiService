@@ -70,18 +70,9 @@ public class SignUp extends AppCompatActivity {
                     Toast t = Toast.makeText(getApplicationContext(), "Please enter at least one contact number", Toast.LENGTH_SHORT);
                     t.show();
                 }
-                User user = new User(firstName,lastName,NIC,address,telHome,telMobile,userName,password,rePassword);
-
-                /*
-
-                    Should insert into both the customer-telephone, customer ad customer-login
 
 
-                 */
-
-
-
-                Intent intent = new Intent(SignUp.this, HireTaxi.class);
+                Intent intent = new Intent(SignUp.this, MainWindow.class);
                 startActivity(intent);
             }
         });
