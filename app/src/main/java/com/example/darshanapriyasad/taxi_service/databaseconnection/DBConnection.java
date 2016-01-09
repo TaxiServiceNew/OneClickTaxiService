@@ -179,5 +179,43 @@ public class DBConnection {
 
     }
 
+    public JSONObject getDriverDetail(String d_nic){
+        String url="http://dbprojectg5.net16.net/userlogin.php?d_nic="+d_nic+"&functionname=dbdriverview";
+
+        HttpEntity httpEntity= null;
+
+        DefaultHttpClient httpClient = new DefaultHttpClient();
+        HttpGet httpGet = new HttpGet(url);
+        try {
+            HttpResponse httpResponse = httpClient.execute(httpGet);
+            httpEntity=httpResponse.getEntity();
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        JSONObject jsonObject = null;
+
+        if(httpEntity!=null){
+
+            String entityResponse;
+            try {
+                entityResponse = EntityUtils.toString(httpEntity);
+                jsonObject = new JSONObject(entityResponse);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return jsonObject;
+
+    }
+
+
+
 
 }
