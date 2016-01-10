@@ -60,6 +60,16 @@ public class MainWindow extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button buttons = (Button) findViewById(R.id.button);
+
+        buttons.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainWindow.this, CustomerReservation.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 }
