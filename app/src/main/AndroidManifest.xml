@@ -47,6 +47,10 @@
         <activity
             android:name=".HireDetail"
             android:label="@string/title_activity_hire_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CustomerReservation"
+            android:label="@string/title_activity_customer_reservation"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
