@@ -26,4 +26,5 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile files('src/lib/httpcore-4.4.3.jar')
     compile files('src/lib/httpclient-4.2.1.jar')
+    compile project(':slideDateTimePicker')
 }

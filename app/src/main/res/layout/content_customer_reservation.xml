@@ -76,4 +76,15 @@
         android:isScrollContainer="true"
         android:keepScreenOn="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DateTime"
+        android:id="@+id/buttonDateTime"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText"
+        android:layout_marginRight="78dp"
+        android:layout_marginEnd="78dp" />
+
 </RelativeLayout>
