@@ -50,7 +50,7 @@ public class MainWindow extends AppCompatActivity {
 
         historyButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainWindow.this, HireDetail.class);
+                Intent intent = new Intent(MainWindow.this, CustomerFeedBackForm.class);
                 intent.putExtra("C_NIC",user_id);
                 startActivity(intent);
             }

@@ -16,19 +16,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Very Bad Trip, Un Comfortable"
-        android:id="@+id/radioButton"
+        android:id="@+id/veryBadButton"
         android:layout_marginTop="70dp"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/radioButton2"
-        android:layout_alignStart="@+id/radioButton2"
+        android:layout_alignLeft="@+id/badButton"
+        android:layout_alignStart="@+id/badButton"
         android:checked="false" />
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bad, Not Comfortable"
-        android:id="@+id/radioButton2"
-        android:layout_below="@+id/radioButton"
+        android:id="@+id/badButton"
+        android:layout_below="@+id/veryBadButton"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="28dp"
         android:checked="false" />
@@ -36,8 +36,8 @@
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/radioButton3"
-        android:layout_below="@+id/radioButton2"
+        android:id="@+id/fairButton"
+        android:layout_below="@+id/badButton"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="28dp"
         android:checked="false"
@@ -47,8 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Good Trip"
-        android:id="@+id/radioButton4"
-        android:layout_below="@+id/radioButton3"
+        android:id="@+id/goodButton"
+        android:layout_below="@+id/fairButton"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="28dp"
         android:checked="false" />
@@ -57,8 +57,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Very Good Ride , Comfortable"
-        android:id="@+id/radioButton5"
-        android:layout_below="@+id/radioButton4"
+        android:id="@+id/veryGoodButton"
+        android:layout_below="@+id/goodButton"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="28dp"
         android:checked="false" />
@@ -71,8 +71,8 @@
         android:id="@+id/commentText"
         android:hint="Type Any Comment"
         android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/radioButton5"
-        android:layout_alignStart="@+id/radioButton5"
+        android:layout_alignLeft="@+id/veryGoodButton"
+        android:layout_alignStart="@+id/veryGoodButton"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
