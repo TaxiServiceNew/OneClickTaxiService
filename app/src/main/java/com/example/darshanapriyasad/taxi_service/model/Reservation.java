@@ -12,13 +12,14 @@ public class Reservation {
     private String fromTime;
     private int dayCount;
     private double money;
+    private int passCount;
+    private String type;
 
     public Reservation(){
 
     }
 
-    public Reservation(String user_id,String from, String to, String fromDate, String fromTime, int dayCount, double money) {
-
+    public Reservation(String user_id,String from, String to, String fromDate, String fromTime, int dayCount, double money,String type,int passCount) {
         this.user_id = user_id;
         this.from = from;
         this.to = to;
@@ -26,6 +27,24 @@ public class Reservation {
         this.fromTime = fromTime;
         this.dayCount = dayCount;
         this.money = money;
+        this.passCount = passCount;
+        this.type = type;
+    }
+
+    public int getPassCount() {
+        return passCount;
+    }
+
+    public void setPassCount(int passCount) {
+        this.passCount = passCount;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getUser_id() {

@@ -18,7 +18,7 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/fromText"
-        android:hint="Locaion - From"
+        android:hint="Location - From"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/imageView4"
         android:layout_alignParentLeft="true"
@@ -34,10 +34,10 @@
         android:id="@+id/toText"
         android:hint="Location - To"
         android:layout_below="@+id/fromText"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/textView3"
-        android:layout_alignEnd="@+id/textView3" />
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -46,10 +46,9 @@
         android:ems="10"
         android:id="@+id/maxMoneyText"
         android:hint="Maximum Payable Money"
-        android:layout_above="@+id/submitButton"
+        android:layout_below="@+id/dayCountText"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="82dp" />
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -69,21 +68,21 @@
         android:textColor="#a83ce1"
         android:textStyle="bold"
         android:textIsSelectable="false"
-        android:textSize="35dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="false"
-        android:layout_alignBottom="@+id/imageView4"
+        android:textSize="32dp"
         android:isScrollContainer="true"
-        android:keepScreenOn="true" />
+        android:keepScreenOn="true"
+        android:layout_above="@+id/fromText"
+        android:layout_alignRight="@+id/backButton"
+        android:layout_alignEnd="@+id/backButton" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="From"
+        android:text="Select Date/Time"
         android:id="@+id/buttonDateTime"
-        android:layout_below="@+id/toText"
-        android:layout_alignRight="@+id/toText"
-        android:layout_alignEnd="@+id/toText" />
+        android:layout_alignBottom="@+id/dateTimeText"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -91,17 +90,20 @@
         android:inputType="date"
         android:ems="10"
         android:id="@+id/dateTimeText"
-        android:layout_alignBottom="@+id/buttonDateTime"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="From Date" />
+        android:hint="From Date"
+        android:enabled="false"
+        android:textIsSelectable="false"
+        android:singleLine="false"
+        android:layout_below="@+id/toText"
+        android:layout_toLeftOf="@+id/buttonDateTime"
+        android:layout_toStartOf="@+id/buttonDateTime" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/submitButton"
-        android:layout_alignTop="@+id/backButton"
+        android:layout_alignBottom="@+id/backButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -111,9 +113,9 @@
         android:text="BACK"
         android:id="@+id/backButton"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="53dp" />
+        android:layout_alignRight="@+id/buttonDateTime"
+        android:layout_alignEnd="@+id/buttonDateTime"
+        android:layout_marginBottom="59dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -121,9 +123,29 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/dayCountText"
-        android:layout_centerVertical="true"
+        android:hint="Day Count"
+        android:layout_below="@+id/buttonDateTime"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="Day Count" />
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/vehicleTypeSpiner"
+        android:layout_below="@+id/maxMoneyText"
+        android:layout_toLeftOf="@+id/buttonDateTime"
+        android:layout_toStartOf="@+id/buttonDateTime"
+        android:spinnerMode="dialog" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/passengerText"
+        android:layout_below="@+id/vehicleTypeSpiner"
+        android:layout_alignRight="@+id/vehicleTypeSpiner"
+        android:layout_alignEnd="@+id/vehicleTypeSpiner"
+        android:hint="Passenger Count" />
 
 </RelativeLayout>
