@@ -18,6 +18,7 @@ public class Reservation {
     }
 
     public Reservation(String user_id,String from, String to, String fromDate, String fromTime, int dayCount, double money) {
+
         this.user_id = user_id;
         this.from = from;
         this.to = to;
