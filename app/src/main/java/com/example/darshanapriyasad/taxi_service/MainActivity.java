@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.darshanapriyasad.taxi_service.R;
+import com.example.darshanapriyasad.taxi_service.support.notifyToDriver;
 import com.example.darshanapriyasad.taxi_service.databaseconnection.DBConnection;
 
 import org.json.JSONException;
@@ -46,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
         {
             public void onClick(View v)
             {
+
+                /*String phoneNo = "0716943927";
+                String message = "Android test";
+                notifyToDriver testsms= new notifyToDriver();
+                testsms.sendSMSMessage(phoneNo,message);*/
+
                 un= nameText.getText().toString();
                 pw = passwordText.getText().toString();
                 new GetUserData().execute(new DBConnection());

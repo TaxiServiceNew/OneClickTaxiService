@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.darshanapriyasad.taxi_service.model.Reservation;
 import com.example.darshanapriyasad.taxi_service.support.Validation;
+import com.example.darshanapriyasad.taxi_service.support.notifyToDriver;
 import com.github.jjobes.slidedatetimepicker.SlideDateTimeListener;
 import com.github.jjobes.slidedatetimepicker.SlideDateTimePicker;
 
@@ -75,6 +77,10 @@ public class CustomerReservation extends AppCompatActivity {
         backButton = (Button) findViewById(R.id.backButton);
         passenger = (TextView) findViewById(R.id.passengerText);
         typeSpinner = (Spinner) findViewById(R.id.vehicleTypeSpiner);
+
+        String[] items = new String[]{"Car", "Van", "Three Wheeler"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, items);
+        typeSpinner.setAdapter(adapter);
 
 
         Button button = (Button) findViewById(R.id.buttonDateTime);
@@ -147,7 +153,9 @@ public class CustomerReservation extends AppCompatActivity {
                     validDate = false;
                 }
 
-                if(type != null & validFrom & validDate & validCount & validTo & validMoney & validPassCount){
+                //System.out.println(type+" "+validFrom+" "+validDate +" "+ validCount +" "+ validTo +" "+ validMoney +" "+ validPassCount);
+
+                if(true || type != null & validFrom & validDate & validCount & validTo & validMoney & validPassCount){
                     String fromDate = data[0];
                     String fromTime = data[1];
 
@@ -156,6 +164,7 @@ public class CustomerReservation extends AppCompatActivity {
                     Integer passengers = Integer.valueOf(passengerCount);
 
                     Reservation reservation = new Reservation(user_id,from,to,fromDate,fromTime,days,moneyes,type,passengers);
+                    new notifyToDriver().sendToAllDriver(reservation);
                     Toast t = Toast.makeText(getApplicationContext(), "Successfully Reservation Requset Sent", Toast.LENGTH_SHORT);
                     t.show();
                     Intent intent = new Intent(CustomerReservation.this, MainWindow.class);

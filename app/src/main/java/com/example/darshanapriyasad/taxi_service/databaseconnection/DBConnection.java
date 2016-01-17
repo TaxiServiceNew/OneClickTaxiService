@@ -66,7 +66,7 @@ public class DBConnection {
     }*/
 
     public JSONObject getUserDetail(String un, String pw){
-        String url="http://dbprojectg5.net16.net/userlogin.php?un="+un+"&pw="+pw+"&functionname=selectuser";
+        String url="http://titansmora.org/buddhiayesha/userlogin.php?un="+un+"&pw="+pw+"&functionname=selectuser";
 
         HttpEntity httpEntity= null;
 
@@ -137,7 +137,7 @@ public class DBConnection {
 
 
     public JSONObject setDbSignUp(String firstName, String lastName, String NIC, String password, String address, String telHome, String telMobile, String userName){
-        String url="http://dbprojectg5.net16.net/userlogin.php?firstName="+firstName+"&lastName="+lastName+"&NIC="+NIC+"&password="+password+"&address="+address+"&telHome="+telHome+"&telMobile="+telMobile+"&userName="+userName+"&functionname=dbsignup";
+        String url="http://titansmora.org/buddhiayesha/userlogin.php?firstName="+firstName+"&lastName="+lastName+"&NIC="+NIC+"&password="+password+"&address="+address+"&telHome="+telHome+"&telMobile="+telMobile+"&userName="+userName+"&functionname=dbsignup";
 
         System.out.println("888 " + url);
         HttpEntity httpEntity= null;
@@ -180,7 +180,7 @@ public class DBConnection {
     }
 
     public JSONObject getDriverDetail(String d_nic){
-        String url="http://dbprojectg5.net16.net/userlogin.php?d_nic="+d_nic+"&functionname=dbdriverview";
+        String url="http://titansmora.org/buddhiayesha/userlogin.php?d_nic="+d_nic+"&functionname=dbdriverview";
 
         HttpEntity httpEntity= null;
 
@@ -215,7 +215,42 @@ public class DBConnection {
 
     }
 
+    public JSONObject getDriverTP(){
+        String url="http://www.dbprojectg5.net16.net/andapp/userlogin.php?functionname=drivertp";
 
+        HttpEntity httpEntity= null;
+
+        DefaultHttpClient httpClient = new DefaultHttpClient();
+        HttpGet httpGet = new HttpGet(url);
+        try {
+            HttpResponse httpResponse = httpClient.execute(httpGet);
+            httpEntity=httpResponse.getEntity();
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        JSONObject jsonObject = null;
+
+        if(httpEntity!=null){
+
+            String entityResponse;
+            try {
+                entityResponse = EntityUtils.toString(httpEntity);
+                jsonObject = new JSONObject(entityResponse);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return jsonObject;
+
+    }
 
 
 }

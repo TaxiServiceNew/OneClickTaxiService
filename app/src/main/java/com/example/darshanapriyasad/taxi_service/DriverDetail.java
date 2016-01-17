@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.darshanapriyasad.taxi_service.R;
 import com.example.darshanapriyasad.taxi_service.databaseconnection.DBConnection;
 import com.example.darshanapriyasad.taxi_service.support.DownloadImageTask;
 

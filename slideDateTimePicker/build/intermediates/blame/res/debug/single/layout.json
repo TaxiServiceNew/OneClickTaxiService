@@ -4,8 +4,16 @@
         "source": "C:\\Users\\Darshana Priyasad\\StudioProjects\\TaxiServiceVersion2.0\\OneClickTaxiService\\slideDateTimePicker\\src\\main\\res\\layout\\fragment_time.xml"
     },
     {
+        "merged": "C:\\Users\\Buddhi Ayesha\\Desktop\\New\\DBP\\New 1_17\\OneClickTaxiService\\slideDateTimePicker\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_time.xml",
+        "source": "C:\\Users\\Buddhi Ayesha\\Desktop\\New\\DBP\\New 1_17\\OneClickTaxiService\\slideDateTimePicker\\src\\main\\res\\layout\\fragment_time.xml"
+    },
+    {
         "merged": "C:\\Users\\Darshana Priyasad\\StudioProjects\\TaxiServiceVersion2.0\\OneClickTaxiService\\slideDateTimePicker\\build\\intermediates\\res\\merged\\debug\\layout\\custom_tab.xml",
         "source": "C:\\Users\\Darshana Priyasad\\StudioProjects\\TaxiServiceVersion2.0\\OneClickTaxiService\\slideDateTimePicker\\src\\main\\res\\layout\\custom_tab.xml"
+    },
+    {
+        "merged": "C:\\Users\\Buddhi Ayesha\\Desktop\\New\\DBP\\New 1_17\\OneClickTaxiService\\slideDateTimePicker\\build\\intermediates\\res\\merged\\debug\\layout\\slide_date_time_picker.xml",
+        "source": "C:\\Users\\Buddhi Ayesha\\Desktop\\New\\DBP\\New 1_17\\OneClickTaxiService\\slideDateTimePicker\\src\\main\\res\\layout\\slide_date_time_picker.xml"
     },
     {
         "merged": "C:\\Users\\Darshana Priyasad\\StudioProjects\\TaxiServiceVersion2.0\\OneClickTaxiService\\slideDateTimePicker\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_date.xml",
@@ -24,11 +32,19 @@
         "source": "C:\\Users\\Buddhi Ayesha\\Desktop\\New\\DBP\\New_1_10\\OneClickTaxiService\\slideDateTimePicker\\src\\main\\res\\layout\\slide_date_time_picker.xml"
     },
     {
+        "merged": "C:\\Users\\Buddhi Ayesha\\Desktop\\New\\DBP\\New 1_17\\OneClickTaxiService\\slideDateTimePicker\\build\\intermediates\\res\\merged\\debug\\layout\\custom_tab.xml",
+        "source": "C:\\Users\\Buddhi Ayesha\\Desktop\\New\\DBP\\New 1_17\\OneClickTaxiService\\slideDateTimePicker\\src\\main\\res\\layout\\custom_tab.xml"
+    },
+    {
         "merged": "C:\\Users\\Buddhi Ayesha\\Desktop\\New\\DBP\\New_1_10\\OneClickTaxiService\\slideDateTimePicker\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_time.xml",
         "source": "C:\\Users\\Buddhi Ayesha\\Desktop\\New\\DBP\\New_1_10\\OneClickTaxiService\\slideDateTimePicker\\src\\main\\res\\layout\\fragment_time.xml"
     },
     {
         "merged": "C:\\Users\\Buddhi Ayesha\\Desktop\\New\\DBP\\New_1_10\\OneClickTaxiService\\slideDateTimePicker\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_date.xml",
         "source": "C:\\Users\\Buddhi Ayesha\\Desktop\\New\\DBP\\New_1_10\\OneClickTaxiService\\slideDateTimePicker\\src\\main\\res\\layout\\fragment_date.xml"
+    },
+    {
+        "merged": "C:\\Users\\Buddhi Ayesha\\Desktop\\New\\DBP\\New 1_17\\OneClickTaxiService\\slideDateTimePicker\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_date.xml",
+        "source": "C:\\Users\\Buddhi Ayesha\\Desktop\\New\\DBP\\New 1_17\\OneClickTaxiService\\slideDateTimePicker\\src\\main\\res\\layout\\fragment_date.xml"
     }
 ]
