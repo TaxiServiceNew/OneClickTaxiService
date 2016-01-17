@@ -8,4 +8,5 @@
     <string name="title_activity_my_detail">My Details</string>
     <string name="title_activity_hire_detail">Hire Details</string>
     <string name="title_activity_customer_reservation">CustomerReservation</string>
+    <string name="title_activity_customer_feed_back_form">Feed Back</string>
 </resources>

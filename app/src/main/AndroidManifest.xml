@@ -51,6 +51,11 @@
         <activity
             android:name=".CustomerReservation"
             android:label="@string/title_activity_customer_reservation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CustomerFeedBack" />
+        <activity
+            android:name=".CustomerFeedBackForm"
+            android:label="@string/title_activity_customer_feed_back_form"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
