@@ -121,7 +121,11 @@ public class CustomerReservation extends AppCompatActivity {
                 String dayCount = dayCountText.getText().toString();
                 String date = dateText.getText().toString();
                 String passengerCount = passenger.getText().toString();
-                String type = typeSpinner.getSelectedItem().toString();
+                String type = null;
+                if(typeSpinner.isSelected()){
+                    type = typeSpinner.getSelectedItem().toString();
+                }
+
 
                 String[] data = null;
 
@@ -143,7 +147,7 @@ public class CustomerReservation extends AppCompatActivity {
                     validDate = false;
                 }
 
-                if(validFrom & validDate & validCount & validTo & validMoney & validPassCount){
+                if(type != null & validFrom & validDate & validCount & validTo & validMoney & validPassCount){
                     String fromDate = data[0];
                     String fromTime = data[1];
 

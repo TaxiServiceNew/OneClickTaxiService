@@ -25,11 +25,12 @@ public class MainWindow extends AppCompatActivity {
             user_id = extras.getString("C_NIC");
 
         }
+
         Button button = (Button) findViewById(R.id.driverButton);
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainWindow.this, HireTaxi.class);
+                Intent intent = new Intent(MainWindow.this, CustomerReservation.class);
                 intent.putExtra("C_NIC",user_id);
                 startActivity(intent);
             }
