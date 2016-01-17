@@ -23,15 +23,15 @@
         android:layout_below="@+id/imageView4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText" />
+        android:layout_alignRight="@+id/toText"
+        android:layout_alignEnd="@+id/toText" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/toText"
         android:hint="Location - To"
         android:layout_below="@+id/fromText"
         android:layout_alignParentLeft="true"
@@ -44,12 +44,12 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:hint="Bidding Money"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/maxMoneyText"
+        android:hint="Maximum Payable Money"
+        android:layout_above="@+id/submitButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="118dp" />
+        android:layout_marginBottom="82dp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -79,12 +79,51 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DateTime"
+        android:text="From"
         android:id="@+id/buttonDateTime"
+        android:layout_below="@+id/toText"
+        android:layout_alignRight="@+id/toText"
+        android:layout_alignEnd="@+id/toText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/dateTimeText"
+        android:layout_alignBottom="@+id/buttonDateTime"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="From Date" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/submitButton"
+        android:layout_alignTop="@+id/backButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:id="@+id/backButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="53dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/dayCountText"
         android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText"
-        android:layout_marginRight="78dp"
-        android:layout_marginEnd="78dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="Day Count" />
 
 </RelativeLayout>

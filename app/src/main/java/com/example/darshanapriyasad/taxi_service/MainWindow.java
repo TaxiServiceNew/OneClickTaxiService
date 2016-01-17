@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class MainWindow extends AppCompatActivity {
 
-    private String NIC;
+    private String user_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +22,7 @@ public class MainWindow extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            NIC = extras.getString("C_NIC");
+            user_id = extras.getString("C_NIC");
 
         }
         Button button = (Button) findViewById(R.id.driverButton);
@@ -30,6 +30,7 @@ public class MainWindow extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(MainWindow.this, HireTaxi.class);
+                intent.putExtra("C_NIC",user_id);
                 startActivity(intent);
             }
         });
@@ -39,6 +40,7 @@ public class MainWindow extends AppCompatActivity {
         detailButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(MainWindow.this, MyDetail.class);
+                intent.putExtra("C_NIC",user_id);
                 startActivity(intent);
             }
         });
@@ -48,6 +50,7 @@ public class MainWindow extends AppCompatActivity {
         historyButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(MainWindow.this, HireDetail.class);
+                intent.putExtra("C_NIC",user_id);
                 startActivity(intent);
             }
         });
@@ -57,6 +60,7 @@ public class MainWindow extends AppCompatActivity {
         driverButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(MainWindow.this, DriverDetail.class);
+                intent.putExtra("C_NIC",user_id);
                 startActivity(intent);
             }
         });
@@ -66,6 +70,7 @@ public class MainWindow extends AppCompatActivity {
         buttons.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(MainWindow.this, CustomerReservation.class);
+                intent.putExtra("C_NIC",user_id);
                 startActivity(intent);
             }
         });
